@@ -11,10 +11,12 @@
     <title>Class-based Google Maps implementation</title>
     <link rel="stylesheet" href="style.css">
 
+    <script src="markerclusterer_compiled.js"></script>
+    <script src="markerwithlabel_packed.js"></script>
+
 </head>
 <body>
 <p>For full options and a full list of controls, see <code>class.googlemaps.js</code>. The minified file <code>class.googlemaps.min.js</code> is the one which is actually used.</p>
-<p><em>22.7.2014</em>: Overlay (<code>markerContent</code>) is not working in the current version of Google Maps</p>
 
 <div id="googlemap1" class="google map"></div>
 
@@ -27,8 +29,7 @@ var my_locations = [
 		labelContent: "Notre Dame",
 		markerContent: "Nice cathedral. (You can also press [Esc] to close this window.)",
 		longitude: "48.853101",
-		latitude: "2.349668",
-		icon: "pin_default.png"
+		latitude: "2.349668"
 	},
 	{
 		title: "Eiffel Tower",
@@ -50,15 +51,18 @@ var my_locations = [
 		mhmli_googlemaps.options.lat_default = 48.85661;
 		mhmli_googlemaps.options.lon_default = 2.35194;
 
-		mhmli_googlemaps.options.zoomlevel_default 	= 14;
-		mhmli_googlemaps.options.zoomlevel_near 		= 18;
+		mhmli_googlemaps.options.zoomlevel_default = 14;
+		mhmli_googlemaps.options.zoomlevel_near = 18;
+		
+		mhmli_googlemaps.options.focus_zoom = false;
+		mhmli_googlemaps.options.focus_centre = false;
 
 		mhmli_googlemaps.options.showLabels = true;
 		
 		mhmli_googlemaps.options.mapTypeID = google.maps.MapTypeId.ROADMAP;
 		mhmli_googlemaps.options.fitToBounds = true;
 		
-		mhmli_googlemaps.controls.resetbutton = false;
+		mhmli_googlemaps.controls.resetbutton = true;
 
 		mhmli_googlemaps.locations = my_locations;
 		
