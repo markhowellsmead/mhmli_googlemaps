@@ -18,7 +18,7 @@
 
 <div id="googlemap1" class="google map"></div>
 
-<script src="class.googlemaps.min.js"></script>
+<script src="class.googlemaps.js"></script>
 
 <script>
 var my_locations = [
@@ -47,22 +47,54 @@ var my_locations = [
 	$(window).load(function(){
 
 		// Set centre as Paris. (Default is the centre of Switzerland.)
-		frp_googlemaps.options.lat_default = 48.85661;
-		frp_googlemaps.options.lon_default = 2.35194;
+		mhmli_googlemaps.options.lat_default = 48.85661;
+		mhmli_googlemaps.options.lon_default = 2.35194;
 
-		frp_googlemaps.options.zoomlevel_default 	= 14;
-		frp_googlemaps.options.zoomlevel_near 		= 18;
+		mhmli_googlemaps.options.zoomlevel_default 	= 14;
+		mhmli_googlemaps.options.zoomlevel_near 		= 18;
 
-		frp_googlemaps.options.showLabels = true;
+		mhmli_googlemaps.options.showLabels = true;
 		
-		frp_googlemaps.options.mapTypeID = google.maps.MapTypeId.ROADMAP;
-		frp_googlemaps.options.fitToBounds = true;
+		mhmli_googlemaps.options.mapTypeID = google.maps.MapTypeId.ROADMAP;
+		mhmli_googlemaps.options.fitToBounds = true;
 		
-		frp_googlemaps.controls.resetbutton = false;
+		mhmli_googlemaps.controls.resetbutton = false;
 
-		frp_googlemaps.locations = my_locations;
+		mhmli_googlemaps.locations = my_locations;
+		
+			mhmli_googlemaps.options.cluster = true;
+			mhmli_googlemaps.options.clusterstyles = [{
+		        url: '/wp-content/themes/bigwideworld/Resources/Public/Images/marker36.png',
+		        height: 36,
+		        width: 36,
+		        anchorIcon: [0, 0],
+		        textColor: '#ffffff',
+		        textSize: 12
+		      }, {
+		        url: '/wp-content/themes/bigwideworld/Resources/Public/Images/marker48.png',
+		        height: 48,
+		        width: 48,
+		        anchor: [0, 0],
+		        textColor: '#ffffff',
+		        textSize: 13
+		      }, {
+		      }, {
+		        url: '/wp-content/themes/bigwideworld/Resources/Public/Images/marker60.png',
+		        height: 60,
+		        width: 60,
+		        anchor: [0, 0],
+		        textColor: '#ffffff',
+		        textSize: 14
+		      }, {
+		        url: '/wp-content/themes/bigwideworld/Resources/Public/Images/marker.png',
+		        height: 36,
+		        width: 36,
+		        anchor: [0, 0],
+		        textColor: '#ffffff',
+		        textSize: 12
+		      }];
 
-		frp_googlemaps.makeMap('googlemap1');
+		mhmli_googlemaps.makeMap('googlemap1');
 
 	});
 })(jQuery);
